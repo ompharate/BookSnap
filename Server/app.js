@@ -19,7 +19,7 @@ app.use(express.static(path.join(__dirname, "public")));
 
 // Route setup
 app.get("/", (req, res) => {
-  res.send("Hello world !!");
+  res.send("Hello world aadesh!!");
 });
 const authRoutes = require("./routes/auth");
 app.use("/api", authRoutes);
