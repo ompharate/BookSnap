@@ -70,42 +70,35 @@ function Login() {
       };
 
 
-    const login = (async(data) => {
-      // setError('');
-      console.log(data);
-      const email = data.email;
-      const password = data.password;
-      try {
-        const response = await fetch(`${BASE_URL}/api/signin`, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({ email, password }),
-        });
-    
-        if (response.ok) {
-          console.log(email,password);
-          const data = await response.json(); // Expecting JSON response
-          console.log('Sign in successful:', data);
-          navigate('/'); // Redirect to the dashboard or another page
-        } else {
-          const errorData = await response.json();
-          alert('Sign in failed: ' + (errorData.error || 'Unknown error'));
+      const login = (async(data) => {
+        // setError('');
+        console.log(data);
+        const email = data.email;
+        const password = data.password;
+        try {
+          const response = await fetch(`${BASE_URL}/api/signin`, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ email, password }),
+          });
+      
+          if (response.ok) {
+            console.log(email,password);
+            const data = await response.json(); // Expecting JSON response
+            console.log('Sign in successful:', data);
+            navigate('/'); // Redirect to the dashboard or another page
+          } else {
+            const errorData = await response.json();
+            alert('Sign in failed: ' + (errorData.error || 'Unknown error'));
+          }
+        } catch (error) {
+          console.error('Error during sign in:', error);
+          alert('An error occurred. Please try again.');
         }
-      } catch (error) {
-        console.error('Error during sign in:', error);
-        alert('An error occurred. Please try again.');
-      }
-      // try {
-      //   const res = await signin(data);
-      //   console.log(res);
-      //   // Handle navigation or state update based on response
-      // } catch (error) {
-      //   console.log(error);
-      //   setError(error.message);
-      // }
-    });
+        
+      });
 
 
   return (

@@ -8,17 +8,19 @@ const app = express();
 // Use CORS middleware before defining routes
 const corsOptions = {
   origin: "https://book-snap-frontend.vercel.app", 
-  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
   credentials: true,
 };
 
+app.use(express.urlencoded({ extended: true }));
 app.use(cors(corsOptions));
-
 // Middleware setup
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, "public")));
 
 // Route setup
+app.get("/", (req, res) => {
+  res.send("Hello world !!");
+});
 const authRoutes = require("./routes/auth");
 app.use("/api", authRoutes);
 
