@@ -74,7 +74,7 @@ function Login() {
       const email = data.email;
       const password = data.password;
       try {
-        const response = await fetch('api/signin', {
+        const response = await fetch('/api/signin', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
