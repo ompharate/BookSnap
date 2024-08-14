@@ -39,7 +39,7 @@ import Logo from '../../components/Logo/Logo.jsx'
 import InputBox from '../../components/InputBox/InputBox.jsx'
 import Button from '../../components/Button/Button.jsx'
 import './Login.css';
-import { BASE_URL } from "../../context/constants";
+import { BASE_URL } from "../../context/constants.js";
 
 
 // import { signin } from '../../controllers/auth.js'
@@ -58,7 +58,7 @@ function Login() {
         try {
           const email = prompt("Please enter your email address:");
           if (email) {
-            const response = await fetch('${BASE_URL}/api/forget-password', { email });
+            const response = await fetch(`${BASE_URL}/api/forget-password`, { email });
             alert(response.data.message);
             console.log(response.data.message);
             
@@ -76,7 +76,7 @@ function Login() {
       const email = data.email;
       const password = data.password;
       try {
-        const response = await fetch('${BASE_URL}/api/signin', {
+        const response = await fetch(`${BASE_URL}/api/signin`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
