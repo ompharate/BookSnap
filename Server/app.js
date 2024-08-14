@@ -16,11 +16,11 @@ const app = express();
 //   allowedHeaders: 'Content-Type,Authorization',
 //   optionsSuccessStatus: 200 // Set to 200 for successful OPTIONS requests
 // };
-const corsOptions = {
-  origin:"https://booksnap-mu.vercel.app",
-  credentials:true
-}
-app.use(cors(corsOptions));
+app.use(cors({
+    origin: 'https://booksnap-mu.vercel.app',
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization']
+}));
 
 // app.use(cors({
 //   origin: 'https://booksnap-mu.vercel.app',
