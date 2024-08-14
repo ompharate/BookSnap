@@ -17,7 +17,7 @@ const app = express();
 //   optionsSuccessStatus: 200 // Set to 200 for successful OPTIONS requests
 // };
 app.use(cors({
-    origin: 'https://booksnap-mu.vercel.app',
+    origin: '*',
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization']
 }));
