@@ -7,7 +7,7 @@ const app = express();
 
 // Use CORS middleware before defining routes
 const corsOptions = {
-  origin: "https://book-snap-frontend.vercel.app", 
+  origin: "https://book-snap.vercel.app", 
   credentials: true,
 };
 
