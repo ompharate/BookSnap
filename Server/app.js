@@ -25,7 +25,7 @@ const authRoutes = require("./routes/auth");
 app.use("/api", authRoutes);
 
 // Define port and start server
-const port = process.env.PORT || 3000;
+const port =  3000;
 app.listen(port, () => {
   console.log(`App is running at http://localhost:${port}`);
 });
