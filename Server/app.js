@@ -18,7 +18,7 @@ const app = express();
 // };
 
 app.use(cors({
-  origin: 'https://booksnap-3egyf0a4i-aadesh0706s-projects.vercel.app',
+  origin: 'https://booksnap-mu.vercel.app',
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
   credentials: true,
 }));
