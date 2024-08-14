@@ -21,6 +21,13 @@ const corsOptions = {
   credentials:true
 }
 app.use(cors(corsOptions));
+
+app.options('*', cors({
+  origin: 'https://booksnap-mu.vercel.app',
+  methods: ['GET', 'POST'],
+  credentials: true
+}));
+
 // app.use(cors({
 //   origin: 'https://booksnap-mu.vercel.app',
 //   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
