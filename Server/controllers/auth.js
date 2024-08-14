@@ -2,7 +2,6 @@ const firebase = require("./../config/firebase");
 const path = require('path');
 require('firebase/auth'); 
 
-// signup
 exports.signup = (req, res) => {
   if (!req.body.email || !req.body.password) {
     return res.status(422).json({

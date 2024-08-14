@@ -73,6 +73,7 @@ import {useForm} from "react-hook-form"
 import Logo from '../../components/Logo/Logo.jsx'
 import InputBox from '../../components/InputBox/InputBox.jsx'
 import Button from '../../components/Button/Button.jsx'
+import { BASE_URL } from '../../context/constants.js'
 
 function SignUp() {
     const navigate = useNavigate()
@@ -88,7 +89,7 @@ function SignUp() {
       const password = data.password;
      
       try {
-        const response = await fetch('https://booksnap-backend.vercel.app/api/signup', {
+        const response = await fetch(`${BASE_URL}/api/signup`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
