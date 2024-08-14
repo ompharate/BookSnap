@@ -9,15 +9,20 @@ const app = express();
 //   origin: 'https://booksnap-mu.vercel.app/', // Your frontend URL
 // }));
 // const cors = require('cors');
-// app.use(cors());const corsOptions = {
+// app.use(cors());
+// const corsOptions = {
+//   origin: 'https://booksnap-3egyf0a4i-aadesh0706s-projects.vercel.app',
+//   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
+//   allowedHeaders: 'Content-Type,Authorization',
+//   optionsSuccessStatus: 200 // Set to 200 for successful OPTIONS requests
+// };
+
+app.use(cors({
   origin: 'https://booksnap-3egyf0a4i-aadesh0706s-projects.vercel.app',
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
-  allowedHeaders: 'Content-Type,Authorization',
-  optionsSuccessStatus: 200 // Set to 200 for successful OPTIONS requests
-};
-
-app.use(cors(corsOptions));
-app.options('*', cors(corsOptions)); // enable pre-flight across-the-board
+  credentials: true,
+}));
+// app.options('*', cors(corsOptions)); // enable pre-flight across-the-board
 
 
 // Routes
