@@ -16,12 +16,16 @@ const app = express();
 //   allowedHeaders: 'Content-Type,Authorization',
 //   optionsSuccessStatus: 200 // Set to 200 for successful OPTIONS requests
 // };
-
-app.use(cors({
-  origin: 'https://booksnap-mu.vercel.app',
-  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
-  credentials: true,
-}));
+const corsOptions = {
+  origin:"https://booksnap-mu.vercel.app",
+  credentials:true
+}
+app.use(cors(corsOptions));
+// app.use(cors({
+//   origin: 'https://booksnap-mu.vercel.app',
+//   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
+//   credentials: true,
+// }));
 // app.options('*', cors(corsOptions)); // enable pre-flight across-the-board
 
 
